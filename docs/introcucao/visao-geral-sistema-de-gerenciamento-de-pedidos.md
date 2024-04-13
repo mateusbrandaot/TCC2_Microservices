@@ -1,0 +1,3 @@
+# Visão Geral Sistema de Gerenciamento de Pedidos
+
+O Sistema de Gerenciamento de Pedidos selecionado como o foco de nossas PoCs exemplifica a aplicação prática das práticas de microsserviços. Este sistema é escolhido por sua relevância operacional e pela oportunidade que oferece para ilustrar as vantagens da modularização, da independência de serviços e da escalabilidade proporcionada pela arquitetura de microsserviços. Através deste sistema, pretendemos evidenciar como as práticas recomendadas contribuem para a agilidade do desenvolvimento, a resiliência do sistema e a eficiência da manutenção.

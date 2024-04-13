@@ -4,20 +4,17 @@
 
 ## Introcução
 
-* [Design Principles](introcucao/design-principles.md)
-* [Brand Guidelines](introcucao/brand-guidelines.md)
-* [How updates work](introcucao/how-updates-work.md)
-* [Accessibility](introcucao/accessibility.md)
+* [Visão Geral](introcucao/visao-geral.md)
+* [🧱 Propósito](introcucao/proposito.md)
+* [Visão Geral Sistema de Gerenciamento de Pedidos](introcucao/visao-geral-sistema-de-gerenciamento-de-pedidos.md)
+* [🛠Objetivos das PoCs](introcucao/objetivos-das-pocs.md)
 
-## identity
+## Sistema de Gerenciamento de Pedidos
 
-* [Logos](identity/logos.md)
-* [Colors](identity/colors.md)
-* [Typography](identity/typography.md)
-* [Imagery](identity/imagery.md)
+* [Introdução](sistema-de-gerenciamento-de-pedidos/introducao.md)
 
-## Components
+## Pocs
 
-* [Icons](components/icons.md)
-* [Buttons](components/buttons.md)
-* [Inputs](components/inputs.md)
+* [Poc 1](pocs/poc-1.md)
+* [Poc 2](pocs/poc-2.md)
+* [Poc 3](pocs/poc-3.md)

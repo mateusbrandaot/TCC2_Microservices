@@ -1,8 +1,6 @@
-# Brand Guidelines
+# 🧱 Propósito
 
-## 🧱 Foundations
-
-Our brand foundation is inextricably linked to the emotional and functional sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+O repositório associado a este trabalho é dedicado à execução e documentação de Provas de Conceito (PoCs) cuidadosamente selecionadas. Estas PoCs têm como finalidade validar e demonstrar a aplicabilidade das práticas recomendadas identificadas, no contexto de um cenário de desenvolvimento de software realista, especificamente através da implementação de um Sistema de Gerenciamento de Pedido
 
 ## 🛠 How we build
 
