@@ -1,5 +1,4 @@
 # Bem Vindo 
-## Informações
 Este repositório pertence ao trabalho Um Catálogo de Boas Práticas para o Desenvolvimento e Implantação de Microserviços. Ele contém todos os materiais, códigos e documentações detalhadas das PoCs desenvolvidas para validar e demonstrar as práticas recomendadas no contexto do desenvolvimento de microsserviços.
 
 A documentação oficial do presente repositório pode ser encontrada no seguinte link :
