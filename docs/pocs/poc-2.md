@@ -1,8 +1,6 @@
-# Buttons
+# Poc 2
 
-Buttons are used to perform actions in the product.
-
-## Default
+Default
 
 {% embed url="https://5ccbc373887ca40020446347-geedzbiswp.chromatic.com/iframe.html?id=button--basic&args=size:medium;containsIcon:false&viewMode=story" %}
 
