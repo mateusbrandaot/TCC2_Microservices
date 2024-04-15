@@ -1,6 +1,10 @@
+---
+description: teste
+---
+
 # Poc 2
 
-Default
+
 
 {% embed url="https://5ccbc373887ca40020446347-geedzbiswp.chromatic.com/iframe.html?id=button--basic&args=size:medium;containsIcon:false&viewMode=story" %}
 
@@ -12,14 +16,12 @@ Default
 <Button
     label="Label"
     size="medium"
-    kind="default"
+    kind="efault"
     onClick={doTheThing}
 />
 ```
 
 ## Primary
-
-{% embed url="https://5ccbc373887ca40020446347-geedzbiswp.chromatic.com/iframe.html?id=button--basic&args=size:medium;containsIcon:false;appearance:primary&viewMode=story" %}
 
 ```javascript
 <Button
