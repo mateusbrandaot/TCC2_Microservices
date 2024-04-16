@@ -7,7 +7,7 @@
 * [Visão Geral](introcucao/visao-geral.md)
 * [🧱 Propósito](introcucao/proposito.md)
 * [Visão Geral Sistema de Gerenciamento de Pedidos](introcucao/visao-geral-sistema-de-gerenciamento-de-pedidos.md)
-* [🛠Objetivos das PoCs](introcucao/objetivos-das-pocs.md)
+* [Objetivos das PoCs](introcucao/objetivos-das-pocs.md)
 
 ## Sistema de Gerenciamento de Pedidos
 
