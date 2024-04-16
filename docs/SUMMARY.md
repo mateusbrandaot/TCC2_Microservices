@@ -1,13 +1,13 @@
 # Table of contents
 
-* [🖌️ Começando](README.md)
+* [📓 Começando](README.md)
 
-## Introcução
+## Introdução
 
-* [Visão Geral](introcucao/visao-geral.md)
-* [🧱 Propósito](introcucao/proposito.md)
-* [Visão Geral Sistema de Gerenciamento de Pedidos](introcucao/visao-geral-sistema-de-gerenciamento-de-pedidos.md)
-* [Objetivos das PoCs](introcucao/objetivos-das-pocs.md)
+* [Visão Geral](introducao/visao-geral.md)
+* [🧱 Propósito](introducao/proposito.md)
+* [Visão Geral Sistema de Gerenciamento de Pedidos](introducao/visao-geral-sistema-de-gerenciamento-de-pedidos.md)
+* [Objetivos das PoCs](introducao/objetivos-das-pocs.md)
 
 ## Sistema de Gerenciamento de Pedidos
 

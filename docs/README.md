@@ -1,4 +1,4 @@
-# 🖌️ Começando
+# 📓 Começando
 
 ## Bem Vindo!
 
