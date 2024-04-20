@@ -12,16 +12,16 @@ O Sistema de Gerenciamento de Pedidos é projetado como um conjunto de microsser
 
 **Componentes Principais**
 
-1. **Microsserviço de Catálogo de Produtos**:
+1. **Microsserviço de Gerenciamento de Produtos**:
    * **Função**: Gerencia o catálogo de produtos, incluindo informações como nome, descrição, preço e estoque.
    * **Tecnologias Utilizadas**: Spring Boot para a lógica de aplicação, MongoDB para armazenamento de dados devido à sua flexibilidade e desempenho com grandes volumes de dados.
-2. **Microsserviço de Gestão de Pedidos**:
+2. **Microsserviço de Gerenciamento de Pedidos**:
    * **Função**: Processa os pedidos dos clientes, gerencia o status de cada pedido, e mantém um registro de todas as transações.
    * **Tecnologias Utilizadas**: Spring Boot e PostgreSQL, este último escolhido pela sua robustez em transações e integridade de dados.
 3. **Microsserviço de Gerenciamento de Clientes**:
    * **Função**: Mantém informações detalhadas dos clientes, como nome, endereço e histórico de pedidos.
    * **Tecnologias Utilizadas**: Spring Boot e MySQL, para um gerenciamento eficiente de dados de clientes.
-4. **Microsserviço de Pagamento**:
+4. **Microsserviço Gerenciamento de Pagamento**:
    * **Função**: Processa todos os pagamentos, lida com detalhes de faturamento e integração com gateways de pagamento.
    * **Tecnologias Utilizadas**: Spring Boot, integrado com APIs de gateways de pagamento externos.
 5. **API Gateway**:
