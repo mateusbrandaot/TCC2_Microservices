@@ -10,6 +10,7 @@
 
 * [Visão Geral do Sistema](sistema-de-gerenciamento-de-pedidos/introducao.md)
 * [Arquitetura do Sistema](sistema-de-gerenciamento-de-pedidos/arquitetura-do-sistema.md)
+* [Tecnologias](sistema-de-gerenciamento-de-pedidos/tecnologias.md)
 
 ## Pocs
 
