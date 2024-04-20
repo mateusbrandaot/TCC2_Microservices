@@ -5,9 +5,6 @@
 ## Introdução
 
 * [Visão Geral](introducao/visao-geral.md)
-* [🧱 Propósito](introducao/proposito.md)
-* [Visão Geral Sistema de Gerenciamento de Pedidos](introducao/visao-geral-sistema-de-gerenciamento-de-pedidos.md)
-* [Objetivos das PoCs](introducao/objetivos-das-pocs.md)
 
 ## Sistema de Gerenciamento de Pedidos
 
