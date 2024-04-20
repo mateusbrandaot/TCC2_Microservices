@@ -8,7 +8,7 @@ O Sistema de Gerenciamento de Pedidos é projetado como um conjunto de microsser
 
 
 
-<figure><img src="../.gitbook/assets/Microservice Architectural Design.jpg" alt=""><figcaption><p>Fonte : Autores</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/Diagrama Arquitetonico.jpg" alt=""><figcaption></figcaption></figure>
 
 **Componentes Principais**
 
