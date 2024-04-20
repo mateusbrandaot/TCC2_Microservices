@@ -6,7 +6,9 @@ O Sistema de Gerenciamento de Pedidos é projetado como um conjunto de microsser
 
 **Diagrama Arquitetônico**
 
-(Insira aqui um diagrama arquitetônico, mostrando os microsserviços e como eles se conectam entre si e com os sistemas externos.)
+
+
+<figure><img src="../.gitbook/assets/Microservice Architectural Design.jpg" alt=""><figcaption><p>Fonte : Autores</p></figcaption></figure>
 
 **Componentes Principais**
 
