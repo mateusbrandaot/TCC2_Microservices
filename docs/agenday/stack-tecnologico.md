@@ -1,4 +1,4 @@
-# Tecnologias
+# Stack Tecnológico
 
 #### Tecnologias e Frameworks Utilizados
 
@@ -11,23 +11,25 @@ Esta seção detalha as tecnologias e frameworks escolhidos para desenvolver o S
 
 **Banco de Dados**
 
-* **PostgreSQL**: Sistema de gerenciamento de banco de dados relacional usado para os microsserviços, escolhido por sua conformidade com ACID, garantindo transações seguras e confiáveis.
+* **Mysql**: Sistema de gerenciamento de banco de dados relacional.
 
 **Contêinerização e Orquestração**
 
 * **Docker**: Ferramenta de contêinerização usada para encapsular os microsserviços e suas dependências em contêineres, garantindo consistência entre os ambientes de desenvolvimento, teste e produção.
 * **Docker Compose**: Utilizado para definir e gerenciar aplicações multi-contêiner, facilitando a configuração e a automação do ambiente local de desenvolvimento e teste.
-* **Kubernetes**: Adotado para a orquestração de contêineres em produção, proporcionando ferramentas para automação de deployment, scaling e gerenciamento de aplicações containerizadas.
+
+
 
 **API e Segurança**
 
 * **Spring Cloud Gateway**: Escolhido para o API Gateway, proporcionando roteamento dinâmico, facilidade na configuração de segurança e integração com sistemas de rate limiting e circuit breaker.
-* **Spring Security & OAuth2**: Frameworks utilizados para implementar segurança robusta nos microsserviços, incluindo autenticação e autorização com suporte a tokens JWT.
+* **Spring Security** : Frameworks utilizados para implementar segurança robusta nos microsserviços, incluindo autenticação e autorização com suporte a tokens JWT.
 
 **Monitoramento e Logs**
 
 * **Prometheus & Grafana**: Utilizados para monitoramento do desempenho dos microsserviços, coletando métricas e fornecendo visualizações em tempo real.
-* **ELK Stack (Elasticsearch, Logstash, Kibana)**: Adotado para centralizar os logs dos microsserviços, facilitando a análise e o troubleshooting.
+
+
 
 #### Conclusão
 

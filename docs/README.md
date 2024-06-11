@@ -8,4 +8,3 @@ Navegue pela nossa documentação para descobrir mais sobre cada PoC, entender o
 
 Agradecemos o seu interesse e convidamos você a explorar, aprender e contribuir para este catálogo de boas práticas.
 
-teste

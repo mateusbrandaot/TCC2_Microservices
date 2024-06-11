@@ -6,11 +6,11 @@
 
 * [Visão Geral](introducao/visao-geral.md)
 
-## Sistema de Gerenciamento de Pedidos
+## Agenday
 
-* [Visão Geral do Sistema](sistema-de-gerenciamento-de-pedidos/introducao.md)
-* [Arquitetura do Sistema](sistema-de-gerenciamento-de-pedidos/arquitetura-do-sistema.md)
-* [Tecnologias](sistema-de-gerenciamento-de-pedidos/tecnologias.md)
+* [Visão Geral do Sistema](agenday/introducao.md)
+* [Arquitetura do Sistema](agenday/arquitetura-do-sistema.md)
+* [Stack Tecnológico](agenday/stack-tecnologico.md)
 
 ## Pocs
 
