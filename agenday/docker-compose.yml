@@ -1,0 +1,88 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: agenday
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      - agenday-net
+
+  user-management:
+    build:
+      context: ./user-management
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+    networks:
+      - agenday-net
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/agenday?createDatabaseIfNotExist=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+      
+
+  registry:
+    build:
+      context: ./registry
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+      - user-management
+    networks:
+      - agenday-net
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/agenday?createDatabaseIfNotExist=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+      
+
+  gateway:
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+      - user-management
+      - registry
+    networks:
+      - agenday-net
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/agenday?createDatabaseIfNotExist=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+      
+
+  sonarqube:
+    image: sonarqube:community
+    ports:
+      - "9000:9000"
+    volumes:
+      - sonarqube-data:/opt/sonarqube/data
+      - sonarqube-logs:/opt/sonarqube/logs
+      - sonarqube-extensions:/opt/sonarqube/extensions
+      - sonarqube-bundled-plugins:/opt/sonarqube/lib/bundled-plugins
+    networks:
+      - agenday-net
+
+volumes:
+  mysql-data:
+  sonarqube-data:
+  sonarqube-logs:
+  sonarqube-extensions:
+  sonarqube-bundled-plugins:
+
+networks:
+  agenday-net:
+    external: true

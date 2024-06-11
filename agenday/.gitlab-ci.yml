@@ -1,0 +1,60 @@
+image: docker:latest
+services:
+  - docker:dind
+
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+  HEROKU_API_KEY: $HEROKU_API_KEY
+
+stages:
+  - build
+  - release
+  - deploy
+
+docker-build-gateway:
+  stage: build
+  script:
+    - cd gateway
+    - docker build -f Dockerfile --iidfile imageid.txt -t registry.heroku.com/agenday-gateway/web .
+    - docker login -u _ -p $HEROKU_API_KEY registry.heroku.com
+    - docker push registry.heroku.com/agenday-gateway/web
+    - apk add --no-cache curl
+    - echo "Docker Image ID is $(cat imageid.txt)"
+    - |
+      curl -X PATCH https://api.heroku.com/apps/agenday-gateway/formation --header "Content-Type: application/json" --header "Accept: application/vnd.heroku+json; version=3.docker-releases" --header "Authorization: Bearer ${HEROKU_API_KEY}" --data '{ "updates": [ { "type": "web", "docker_image": "'$(cat imageid.txt)'" } ] }'
+
+docker-build-user-management:
+  stage: build
+  script:
+    - cd user-management
+    - docker build -f Dockerfile --iidfile imageid.txt -t registry.heroku.com/agenday-user-management/web .
+    - docker login -u _ -p $HEROKU_API_KEY registry.heroku.com
+    - docker push registry.heroku.com/agenday-user-management/web
+    - apk add --no-cache curl
+    - echo "Docker Image ID is $(cat imageid.txt)"
+    - |
+      curl -X PATCH https://api.heroku.com/apps/agenday-user-management/formation --header "Content-Type: application/json" --header "Accept: application/vnd.heroku+json; version=3.docker-releases" --header "Authorization: Bearer ${HEROKU_API_KEY}" --data '{ "updates": [ { "type": "web", "docker_image": "'$(cat imageid.txt)'" } ] }'
+
+docker-build-registry:
+  stage: build
+  script:
+    - cd registry
+    - docker build -f Dockerfile --iidfile imageid.txt -t registry.heroku.com/agenday-registry/web .
+    - docker login -u _ -p $HEROKU_API_KEY registry.heroku.com
+    - docker push registry.heroku.com/agenday-registry/web
+    - apk add --no-cache curl
+    - echo "Docker Image ID is $(cat imageid.txt)"
+    - |
+      curl -X PATCH https://api.heroku.com/apps/agenday-registry/formation --header "Content-Type: application/json" --header "Accept: application/vnd.heroku+json; version=3.docker-releases" --header "Authorization: Bearer ${HEROKU_API_KEY}" --data '{ "updates": [ { "type": "web", "docker_image": "'$(cat imageid.txt)'" } ] }'
+
+pages:
+  stage: deploy
+  script:
+    - mkdir public
+    - cp -r docs/. public/  # Copia todo o conteúdo de docs para public
+  artifacts:
+    paths:
+      - public
+  only:
+    - main  # Executa este job apenas na branch main

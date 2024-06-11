@@ -1,0 +1,31 @@
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "${FRONTEND_ORIGIN:http://frontend:3000}"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders:
+              - "*"
+      mvc:
+        routes:
+          - id: user-management-service
+            uri: "${USER_MANAGEMENT_URI:http://user-management:8081}"
+            predicates:
+              - Path=/user-management/**
+            filters:
+              - AddRequestHeader=X-Request-User-Management, User-Management
+          - id: registry-service
+            uri: "${REGISTRY_URI:http://registry:8082}"
+            predicates:
+              - Path=/registry/**
+            filters:
+              - AddRequestHeader=X-Request-registry, registry
+server:
+  port: ${PORT:8080}

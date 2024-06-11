@@ -1,0 +1,18 @@
+version: '3.8'  # Especifica a versão do Docker Compose utilizada.
+
+services:  # Define os serviços que compõem sua aplicação.
+  gateway:  # Nome do serviço, neste caso, 'gateway'.
+    build: .  # Caminho para o diretório contendo o Dockerfile do gateway. Docker Compose irá construir a imagem a partir deste diretório.
+    ports:
+      - "8080:8080"  # Mapeamento de portas. A porta 80 do host é mapeada para a porta 8080 do container, tornando o serviço acessível na porta 80 externamente.
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/agenday?createDatabaseIfNotExist=true&serverTimezone=UTC
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=rootpassword
+      
+    networks:
+      - agenday-net  # Conecta o serviço 'gateway' à rede 'agenday-net'.
+
+networks:
+  agenday-net:  # Define as redes utilizadas pelos serviços.
+    external: true  # Indica que 'agenday-net' é uma rede externa, não definida dentro deste Docker Compose, mas sim criada anteriormente via Docker.

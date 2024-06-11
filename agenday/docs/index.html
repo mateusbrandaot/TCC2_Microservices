@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+  
+  <title>Documentação Agenday</title>
+  <meta name="description" content="Documentação completa para o site Agenday.">
+  
+  <!-- Tema do Docsify com ajuste para cores suaves -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  
+  <!-- Google Font Roboto para um visual limpo e moderno -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Estilização Personalizada -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9; /* fundo geral suave */
+      color: #333; /* cor de texto escuro para bom contraste */
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    .sidebar {
+      background-color: #87bbf0; /* um azul escuro para a barra lateral */
+      color: #ecf0f1; /* cor clara para o texto na barra lateral */
+      padding: 20px;
+      font-size: 1.1em;
+    }
+
+    .sidebar .sidebar-title {
+      font-weight: 700;
+      font-size: 1.2em;
+      color: #f39c12; /* um amarelo dourado para títulos */
+    }
+
+    a {
+      color: #3498db; /* azul claro para links */
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #2980b9; /* um azul mais escuro para hover */
+      text-decoration: underline;
+    }
+
+    .sidebar-toggle {
+      background: #f5f5f5;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+    }
+
+    .sidebar-toggle:hover {
+      background: #2980b9;
+    }
+
+    img {
+      max-width: 100%; /* garante que as imagens não ultrapassem seu contêiner */
+      border-radius: 5px; /* bordas levemente arredondadas para as imagens */
+    }
+
+    .content {
+      padding: 20px;
+      background: #f9f9f9, 0%, 100%; /* fundo branco para a área de conteúdo */
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .sidebar {
+        padding: 15px;
+      }
+
+      .content {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app" class="content"></div>
+
+  <script>
+    window.$docsify = {
+      name: 'Documentação Agenday',
+      loadSidebar: true,
+      auto2top: true,
+      themeColor: '#3498db',
+      coverpage: true,
+      search: {
+        placeholder: 'Pesquisar...',
+        noData: 'Nenhum resultado encontrado.',
+        depth: 2,
+      }
+    };
+  </script>
+
+  <!-- Docsify e plugins -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script> 
+</body>
+</html>
