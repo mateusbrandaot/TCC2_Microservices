@@ -56,10 +56,6 @@
 | REQ015 | Como administrador, quero adicionar serviços ao catálogo para disponibilizar mais opções aos clientes.                   | Formulário para inserção de novos serviços com campos para nome, descrição, preço e duração. Validação dos dados inseridos para garantir a precisão das informações. | Should Have |
 | REQ016 | Como administrador, quero atualizar ou remover serviços do catálogo para manter as informações corretas e atuais.        | Opções de editar e excluir para cada serviço listado. Confirmação antes da exclusão de um serviço.                                                                   | Could Have  |
 
-**Desenvolvimento do Microsserviço:** O microsserviço foi desenvolvido utilizando a tecnologia Spring Boot para a criação da aplicação, e o MySQL foi escolhido para a persistência dos dados.
-
-O código fonte do microsserviço pode ser encontrado no seguinte repositório: [GitHub - Agenday Registry Service](https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/registry).
-
 ### Análise dos Resultados da Poc
 
 A análise de resultados envolveu a avaliação desta PoC em diversos termos de desempenho técnico. Os dados foram coletados em uma aplicação local rodando em um container. Os testes foram realizados no JMeter com 1000 threads, simulando 1000 usuários quase simultâneos fazendo requisições.
@@ -105,3 +101,5 @@ Este histograma mostra a distribuição das falhas ao longo do tempo. Ele indica
 #### Conclusão
 
 A partir dos dados analisados, observa-se que a latência média do microsserviço está razoavelmente baixa, indicando um bom tempo de resposta. O throughput é bom, mas pode ser melhorado. A presença de 304 falhas pode ser atribuída a fatores como as limitações do ambiente local com container, o que sugere que esses números podem ser mais favoráveis em um ambiente de produção otimizado. Como os dados foram coletados em um ambiente local rodando em um container, é provável que o desempenho em um ambiente de produção real seja diferente. Fatores como a configuração da infraestrutura, o balanceamento de carga e o tráfego de rede podem impactar significativamente os resultados. As limitações do ambiente local com container podem ter impactado tanto o throughput quanto o número de falhas observadas, sugerindo que esses números podem ser mais favoráveis em um ambiente de produção otimizado.
+
+O código fonte do microsserviço pode ser encontrado no seguinte repositório: [GitHub - Agenday Registry Service](https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/registry).
