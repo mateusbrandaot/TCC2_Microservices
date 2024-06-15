@@ -16,38 +16,7 @@ Os seguintes requisitos devem ser atendidos para que essa prova de conceito seja
 
 #### Implementação do API Gateway
 
-**Configuração Global de CORS**
-
-**Classe `GlobalCorsConfig` para configuração CORS:**
-
-```java
-javaCopiar códigoimport org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-
-@Configuration
-public class GlobalCorsConfig {
-
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**")
-                        .allowedOrigins("*")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
-                        .allowedHeaders("*")
-                        .maxAge(3600);
-            }
-        };
-    }
-}
-```
-
-A configuração global de CORS permite que todas as requisições CORS sejam permitidas para todos os endpoints da aplicação. Isso é crucial para facilitar a comunicação entre o front-end e o back-end, especialmente durante o desenvolvimento e testes, garantindo que não haja bloqueios de origem cruzada.
-
-O código fonte dessa classe pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/blob/main/agenday/gateway/src/main/java/com/agenday/gateway/config/GlobalCorsConfig.java](../../agenday/gateway/src/main/java/com/agenday/gateway/config/GlobalCorsConfig.java)
+O código fonte com a implementação pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/gateway](https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/gateway)
 
 **Configuração de Segurança**
 
