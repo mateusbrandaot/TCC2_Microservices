@@ -64,17 +64,6 @@ services:
       - SPRING_DATASOURCE_PASSWORD=rootpassword
       
 
-  sonarqube:
-    image: sonarqube:community
-    ports:
-      - "9000:9000"
-    volumes:
-      - sonarqube-data:/opt/sonarqube/data
-      - sonarqube-logs:/opt/sonarqube/logs
-      - sonarqube-extensions:/opt/sonarqube/extensions
-      - sonarqube-bundled-plugins:/opt/sonarqube/lib/bundled-plugins
-    networks:
-      - agenday-net
 
 volumes:
   mysql-data:

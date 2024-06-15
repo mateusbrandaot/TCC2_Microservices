@@ -1,0 +1,23 @@
+# Global config
+global:
+  scrape_interval: 15s # Intervalo global de scrape
+  evaluation_interval: 15s # Intervalo de avaliação de regras
+
+# Carregar regras periodicamente de acordo com o intervalo global de avaliação
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+# Configuração de scrape
+scrape_configs:
+  # Scrape de métricas do próprio Prometheus
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Scrape de métricas do Spring Actuator expostas pela aplicação
+  - job_name: 'spring-actuator'
+    metrics_path: '/actuator/prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['host.docker.internal:8082']
