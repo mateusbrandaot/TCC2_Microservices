@@ -275,5 +275,3 @@ Os testes realizados mostraram que o API Gateway é capaz de proteger contra sol
 Além disso, o uso do API Gateway simplificou significativamente o gerenciamento das APIs, permitindo que o front-end interaja com diversos microsserviços através de um único ponto de entrada. Isso não apenas facilita a manutenção e a escalabilidade da aplicação, mas também melhora a eficiência operacional.
 
 Em resumo, a implementação do API Gateway atendeu aos requisitos propostos e demonstrou os benefícios em termos de segurança, eficiência e gerenciamento de tráfego, validando a viabilidade da solução em um ambiente de microsserviços.
-
-4o
