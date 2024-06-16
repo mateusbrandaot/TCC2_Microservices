@@ -23,7 +23,9 @@ Os seguintes requisitos devem ser atendidos para que essa prova de conceito seja
 
 **1.Escolher o Microsserviço:**
 
-* Selecionamos o microsserviço de "Agendamento de Consultas".
+* Selecionamos a feature de "Registro de Instituição".
+
+O código fonte com a implementação pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/registry](https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/registry)
 
 **2.Configurar o Circuit Breaker:**
 
