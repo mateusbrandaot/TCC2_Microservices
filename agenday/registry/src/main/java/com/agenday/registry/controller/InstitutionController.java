@@ -23,8 +23,8 @@ public class InstitutionController {
 
     @PostMapping("create/by/user/{userId}")
     public ResponseEntity<String> createInstitution(@RequestBody InstitutionDTO institution, @PathVariable Long userId) {
-        institutionService.saveInstitution(institution, userId);
-        return ResponseEntity.ok("Institution created successfully");
+        String response = institutionService.saveInstitution(institution, userId);
+        return ResponseEntity.ok(response);
     }
 
     @PutMapping("update/institution/{institutionId}")

@@ -12,6 +12,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 @Service
 public class InstitutionService {
 
@@ -39,6 +46,12 @@ public class InstitutionService {
     @Autowired
     private AddressService addressService;
 
+    @Autowired
+    private InstitutionFallbackRepository institutionFallbackRepository;
+
+    private static final Logger logger = LoggerFactory.getLogger(InstitutionService.class);
+
+
     public List<Institution> findAllInstitutions() {
         return institutionRepository.findAll();
     }
@@ -62,19 +75,34 @@ public class InstitutionService {
         return institutionRepository.findById(id).orElse(null);
     }
 
-    public Institution saveInstitution(InstitutionDTO institutionDTO, Long idUsuario) {
+    @CircuitBreaker(name = "institutionService", fallbackMethod = "fallbackSaveInstitution")
+    public String saveInstitution(InstitutionDTO institutionDTO, Long idUsuario) {
         try {
             Institution institution = institutionRepository.save(institutionBuild(institutionDTO, idUsuario));
             addressService.saveAddress(institutionDTO.getAddressDTO(), institution.getId());
             for (ContactDTO contact : institutionDTO.getContactDTO()) {
                 contactRepository.save(BuilContact(contact, institution.getId()));
             }
-            return institutionRepository.save(institution);
+            institutionRepository.save(institution);
+            return "Institution created successfully";
         } catch (Exception e) {
-            throw new ForbiddenException("Error saving institution: " + e.getMessage());
+            logger.error("Error saving institution: ", e);
+            throw e;
         }
     }
 
+    public String fallbackSaveInstitution(InstitutionDTO institutionDTO, Long idUsuario, Throwable t) {
+        logger.error("Error saving institution. Fallback method activated. Reason: ", t);
+
+        InstitutionFallback fallbackInstitution = new InstitutionFallback();
+        fallbackInstitution.setName(institutionDTO.getName());
+        fallbackInstitution.setType(institutionDTO.getType());
+        fallbackInstitution.setDocument(institutionDTO.getDocument());
+        fallbackInstitution.setUserId(idUsuario);
+        fallbackInstitution.setServiceTypeId(institutionDTO.getServiceTypeId());
+        institutionFallbackRepository.save(fallbackInstitution);
+        return "Pending Institution Registration";
+    }
     public Institution saveInstitutionUpdate(InstitutionDTO institutionDTO, long institutionId) {
         try {
             Institution institution = institutionRepository.save(institutionBuildUpdate(institutionDTO, institutionId));

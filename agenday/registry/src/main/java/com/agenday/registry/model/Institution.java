@@ -1,5 +1,6 @@
 package com.agenday.registry.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.List;
@@ -29,18 +30,22 @@ public class Institution {
     @JoinColumn(name = "service_type_id", nullable = false)
     private ServiceType serviceType;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "institution", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Employee> employes;
 
     @OneToOne(mappedBy = "institution")
     @JoinColumn(name = "address_id", referencedColumnName = "id")
+    @JsonIgnore
     private Address address;
 
     @OneToMany(mappedBy = "institution", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<Contact> contacts;
 
     // Relacionamento Muitos para Um com User
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+    @JsonIgnore
     private User user;
 }
