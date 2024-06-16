@@ -15,7 +15,6 @@ Os seguintes requisitos devem ser atendidos para que essa prova de conceito seja
 * Escolher um microsserviço crítico na aplicação para implementar o Circuit Breaker.
 * Configurar o Circuit Breaker para detectar falhas e interromper automaticamente as solicitações, evitando sobrecarga no serviço.
 * Implementar uma lógica de fallback para oferecer uma resposta alternativa quando um serviço falhar.
-* Configurar parâmetros para a reabertura do circuito quando o serviço estabilizar.
 
 ### **Implementação da PoC**
 
