@@ -23,7 +23,7 @@ Os seguintes requisitos devem ser atendidos para que essa prova de conceito seja
 
 **1.Escolher o Microsserviço:**
 
-* Selecionamos a feature de "Registro de Instituição".
+Foi selecionado o microsserviço "registry" devido à sua extrema importância, pois ele comporta as principais funcionalidades do serviço de agendamento de consultas. Este microsserviço é crítico para o funcionamento da aplicação, uma vez que gerencia o registro e a manutenção das instituições e profissionais, além de seus horários de disponibilidade. Por sua relevância, garantir a resiliência e disponibilidade deste serviço é fundamental para o sucesso da plataforma.
 
 O código fonte com a implementação pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/registry](https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/registry)
 
