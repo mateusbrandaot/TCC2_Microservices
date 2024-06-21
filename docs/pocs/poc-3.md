@@ -2,11 +2,9 @@
 
 ## **PoC 3 - Circuit Breaker**
 
-Essa seção descreve a prova de conceito (PoC) para a implementação do padrão Circuit Breaker. A seção é introduzida com a Definição da PoC, seguida dos Requisitos da PoC, e finaliza com a Análise dos Resultados da PoC.
-
 #### **Definição da PoC**
 
-Essa prova de conceito tem o intuito de validar a implementação do padrão Circuit Breaker para aumentar a resiliência do sistema, prevenindo falhas em cascata entre microsserviços.
+**Objetivo**: Essa prova de conceito tem o intuito de validar a implementação do padrão Circuit Breaker para aumentar a resiliência do sistema, prevenindo falhas em cascata entre microsserviços.
 
 #### **Requisitos da PoC**
 

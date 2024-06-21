@@ -4,7 +4,7 @@
 
 #### Definição da PoC
 
-Essa prova de conceito tem como objetivo implementar um API Gateway para gerenciar as solicitações entre a interface do usuário e os microsserviços, demonstrando as vantagens em termos de segurança, eficiência e gerenciamento de tráfego.
+**Objetivo**: Essa prova de conceito tem como objetivo implementar um API Gateway para gerenciar as solicitações entre a interface do usuário e os microsserviços, demonstrando as vantagens em termos de segurança, eficiência e gerenciamento de tráfego.
 
 #### Requisitos da PoC
 
