@@ -12,7 +12,7 @@ O presente repositório é dedicado à execução e documentação de Provas de 
 
 
 
-### Sistema de Gerenciamento de Pedidos
+### Sistema de Agendamento
 
 O Sistema Agenday selecionado como o foco de nossas PoCs exemplifica a aplicação prática das práticas de microsserviços. Este sistema é escolhido por sua relevância operacional e pela oportunidade que oferece para ilustrar as vantagens da modularização, da independência de serviços e da escalabilidade proporcionada pela arquitetura de microsserviços. Através deste sistema, pretendemos evidenciar como as práticas recomendadas contribuem para a agilidade do desenvolvimento, a resiliência do sistema e a eficiência da manutenção.
 
@@ -32,7 +32,7 @@ Demonstrar a eficácia na criação de um microsserviço específico de domínio
 
 **Objetivo:**
 
-Implementar um API Gateway para atuar como uma camada unificadora entre a interface do usuário e os microsserviços subjacentes. Este objetivo envolve demonstrar os benefícios do Gateway em termos de segurança, eficiência na gestão de solicitações, essenciais para a orquestração eficaz de microsserviços.
+Implementar um API Gateway para atuar como uma camada unificadora entre a interface do usuário e os microsserviços subjacentes. Este objetivo envolve demonstrar os benefícios do Gateway em termos de segurança, gerencimento de apis e eficiência na gestão de solicitações, que são essenciais para a orquestração eficaz de microsserviços.
 
 ### PoC 3: Circuit Breaker
 
