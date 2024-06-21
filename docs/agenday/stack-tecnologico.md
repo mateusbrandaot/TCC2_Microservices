@@ -27,8 +27,6 @@ Esta seção detalha as tecnologias e frameworks escolhidos para desenvolver o S
 
 * **Prometheus & Grafana**: Utilizados para monitoramento do desempenho dos microsserviços, coletando métricas e fornecendo visualizações em tempo real.
 
-
-
-#### Conclusão
+### Conclusão
 
 A escolha dessas tecnologias e frameworks foi direcionada pela necessidade de criar um sistema altamente escalável, resiliente e fácil de manter. Cada tecnologia foi escolhida com base em sua capacidade de atender às necessidades específicas dos microsserviços, contribuindo significativamente para a performance, segurança e facilidade de uso do sistema.
