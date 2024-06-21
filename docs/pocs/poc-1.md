@@ -8,13 +8,13 @@
 
 ### Requisitos da PoC
 
-1. **Identificação do Domínio de Negócio:** Agendamento de Consultas.
-2.  **Definição dos Requisitos:** Para a definição dos requisitos, foi utilizado um product backlog, que é uma lista dinâmica e ordenada das funcionalidades desejadas para o produto. Essa lista foi organizada e priorizada utilizando a técnica MoSCoW (Must have, Should have, Could have, Won't have this time). Essa técnica permite a priorização eficaz dos requisitos, classificando-os em quatro categorias principais:
+1. Identificação do Domínio de Negócio: Agendamento de Consultas.
+2.  Definição dos Requisitos: Para a definição dos requisitos, foi utilizado um product backlog, que é uma lista dinâmica e ordenada das funcionalidades desejadas para o produto. Essa lista foi organizada e priorizada utilizando a técnica MoSCoW (Must have, Should have, Could have, Won't have this time). Essa técnica permite a priorização eficaz dos requisitos, classificando-os em quatro categorias principais:
 
-    * **Must have:** Requisitos essenciais que devem ser implementados para que o produto seja considerado funcional.
-    * **Should have:** Requisitos importantes que são desejáveis, mas não essenciais para o funcionamento básico do produto.
-    * **Could have:** Requisitos que são desejáveis, mas não são críticos e podem ser implementados se houver tempo e recursos disponíveis.
-    * **Won't have this time:** Requisitos que são reconhecidos, mas que não serão implementados na presente iteração.
+    * Must have: Requisitos essenciais que devem ser implementados para que o produto seja considerado funcional.
+    * Should have: Requisitos importantes que são desejáveis, mas não essenciais para o funcionamento básico do produto.
+    * Could have: Requisitos que são desejáveis, mas não são críticos e podem ser implementados se houver tempo e recursos disponíveis.
+    * Won't have this time: Requisitos que são reconhecidos, mas que não serão implementados na presente iteração.
 
     Através dessa metodologia, foi possível garantir que os requisitos mais críticos e de maior valor para os usuários fossem priorizados e implementados primeiro.
 
