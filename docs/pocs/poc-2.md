@@ -20,7 +20,7 @@ O código fonte com a implementação pode ser encontrado no seguinte repositór
 
 1. **Configuração de Segurança**
 
-**Classe `SecurityConfiguration` para configuração de segurança:**
+Classe `SecurityConfiguration` para configuração de segurança:
 
 ```java
 javaCopiar códigopackage com.agenday.gateway.config;
@@ -86,7 +86,7 @@ O código fonte dessa classe pode ser encontrado no seguinte repositório: [http
 
 2. **Filtro de Autenticação Personalizado**
 
-**Classe `UserAuthenticationFilter` para filtragem de autenticação:**
+Classe `UserAuthenticationFilter` para filtragem de autenticação:
 
 ```java
 javaCopiar códigopackage com.agenday.gateway.config;
