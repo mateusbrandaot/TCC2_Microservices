@@ -26,13 +26,13 @@ As Provas de Conceito (PoCs) executadas neste trabalho visam validar práticas e
 
 **Objetivo:**
 
-Demonstrar a eficácia na criação de um microsserviço específico de domínio, enfatizando a modularização e autonomia. Esta PoC ilustra como um serviço pode ser desenvolvido e mantido de forma independente, centrado nas necessidades de negócios específicas, como um sistema de gerenciamento de pedidos.
+Demonstrar a eficácia na criação de um microsserviço específico de domínio, enfatizando a modularização e autonomia. Esta PoC ilustra como um serviço pode ser desenvolvido e mantido de forma independente, centrado nas necessidades de negócios específicas.
 
 ### PoC 2: API Gateway
 
 **Objetivo:**
 
-Implementar um API Gateway para atuar como uma camada unificadora entre a interface do usuário e os microsserviços subjacentes. Este objetivo envolve demonstrar os benefícios do Gateway em termos de segurança, eficiência na gestão de solicitações e balanceamento de carga, essenciais para a orquestração eficaz de microsserviços.
+Implementar um API Gateway para atuar como uma camada unificadora entre a interface do usuário e os microsserviços subjacentes. Este objetivo envolve demonstrar os benefícios do Gateway em termos de segurança, eficiência na gestão de solicitações, essenciais para a orquestração eficaz de microsserviços.
 
 ### PoC 3: Circuit Breaker
 
