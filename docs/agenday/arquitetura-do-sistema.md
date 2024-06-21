@@ -14,7 +14,7 @@ Abaixo, descrevemos os principais componentes da arquitetura:
 
 #### Diagramas de Arquitetura <a href="#diagramas-de-arquitetura" id="diagramas-de-arquitetura"></a>
 
-Os diagramas de arquitetura fornecem uma visualização clara da estrutura e interação entre os componentes do sistema. (Nota: os diagramas devem ser criados e incorporados aqui utilizando ferramentas como Lucidchart, Draw.io, ou similares.)
+Os diagramas de arquitetura fornecem uma visualização clara da estrutura e interação entre os componentes do sistema.
 
 1. **Diagrama de Arquitetura Geral**: Ilustra a relação entre o frontend, o backend (microsserviços), o servidor de aplicação e o banco de dados.
 
