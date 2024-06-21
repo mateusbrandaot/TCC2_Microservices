@@ -2,11 +2,11 @@
 
 ### PoC 2 - API Gateway
 
-#### Definição da PoC
+### Definição da PoC
 
 **Objetivo**: Essa prova de conceito tem como objetivo implementar um API Gateway para gerenciar as solicitações entre a interface do usuário e os microsserviços, demonstrando as vantagens em termos de segurança, eficiência e gerenciamento de tráfego.
 
-#### Requisitos da PoC
+### Requisitos da PoC
 
 Os seguintes requisitos devem ser atendidos para que essa prova de conceito seja considerada concluída:
 
@@ -14,11 +14,11 @@ Os seguintes requisitos devem ser atendidos para que essa prova de conceito seja
 * Configurar o Gateway para rotear solicitações para os microsserviços apropriados.
 * Implementar funcionalidades de segurança, como autenticação e autorização, no Gateway.
 
-#### Implementação do API Gateway
+### Implementação do API Gateway
 
 O código fonte com a implementação pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/gateway](https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/gateway)
 
-**Configuração de Segurança**
+1. **Configuração de Segurança**
 
 **Classe `SecurityConfiguration` para configuração de segurança:**
 
@@ -84,7 +84,7 @@ Esta configuração define a segurança da aplicação. Ela desabilita a proteç
 
 O código fonte dessa classe pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/blob/main/agenday/gateway/src/main/java/com/agenday/gateway/config/SecurityConfiguration.java](../../agenday/gateway/src/main/java/com/agenday/gateway/config/SecurityConfiguration.java)
 
-**Filtro de Autenticação Personalizado**
+2. **Filtro de Autenticação Personalizado**
 
 **Classe `UserAuthenticationFilter` para filtragem de autenticação:**
 
@@ -163,25 +163,23 @@ public class UserAuthenticationFilter extends OncePerRequestFilter {
 
 O código fonte dessa classe pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/blob/main/agenday/gateway/src/main/java/com/agenday/gateway/config/UserAuthenticationFilter.java](../../agenday/gateway/src/main/java/com/agenday/gateway/config/UserAuthenticationFilter.java)
 
-#### Análise dos Resultados da PoC
+### Análise dos Resultados da PoC
 
-**Eficiência do Gateway**
-
-**Eficácia na proteção contra solicitações mal-intencionadas**
+1. **Eficácia na proteção contra solicitações mal-intencionadas**
 
 Para testar a eficácia do API Gateway na proteção contra solicitações mal-intencionadas, realizamos os seguintes testes:
 
-**Primeira Requisição Sem Autenticação**
+Primeira Requisição Sem Autenticação:
 
-* **Descrição:** Tentamos acessar o endpoint `/registry/specialties/institution/3` na porta 8080 sem fornecer um token JWT.
-* **Resultado:** O gateway retornou um status 403 (Forbidden), indicando que a solicitação foi barrada devido à ausência de autenticação.
+* Descrição**:** Tentamos acessar o endpoint `/registry/specialties/institution/3` na porta 8080 sem fornecer um token JWT.
+* Resultado**:** O gateway retornou um status 403 (Forbidden), indicando que a solicitação foi barrada devido à ausência de autenticação.
 
 <figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Fonte: Autor</p></figcaption></figure>
 
-**Requisição de Login**
+Requisição de Login:
 
-* **Descrição:** Realizamos uma requisição de login para obter o token JWT necessário para autenticação.
-*   **Corpo da Requisição:**
+* Descrição**:** Realizamos uma requisição de login para obter o token JWT necessário para autenticação.
+*   Corpo da Requisição:
 
     ```json
     {
@@ -189,29 +187,30 @@ Para testar a eficácia do API Gateway na proteção contra solicitações mal-i
       "password": "123"
     }
     ```
-* **Resultado:** A requisição foi bem-sucedida e recebemos um token JWT válido.
+* Resultado**:** A requisição foi bem-sucedida e recebemos um token JWT válido.
 
 <figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-**Requisição Autenticada**
+Requisição Autenticada:
 
-* **Descrição:** Utilizando o token JWT obtido na etapa anterior, tentamos acessar novamente o endpoint `/registry/specialties/institution/3`.
-*   **Cabeçalho de Autorização:**
+Descrição**:** Utilizando o token JWT obtido na etapa anterior, tentamos acessar novamente o endpoint `/registry/specialties/institution/3`.
+
+*   Cabeçalho de Autorização:
 
     ```makefile
     Authorization: Bearer <token>
     ```
-* **Resultado:** A requisição foi bem-sucedida e retornou um status 200 (OK), indicando que o acesso foi permitido com a autenticação correta.
+* Resultado**:** A requisição foi bem-sucedida e retornou um status 200 (OK), indicando que o acesso foi permitido com a autenticação correta.
 
 <figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption><p>Fonte: Autor</p></figcaption></figure>
 
 Esses testes demonstram que o API Gateway é eficaz na proteção contra solicitações mal-intencionadas, barrando acessos não autenticados e permitindo apenas solicitações autenticadas com um token JWT válido.
 
-**Facilidade de gerenciamento de diferentes APIs**
+2. **Facilidade de gerenciamento de diferentes APIs**
 
 Para facilitar o gerenciamento de diferentes microsserviços, configuramos o API Gateway para rotear todas as solicitações através de uma única aplicação. Isso centraliza o ponto de entrada para todos os microsserviços, simplificando o acesso e o gerenciamento das APIs para o front-end.
 
-**Configuração do Spring Cloud Gateway:**
+Configuração de Roteamento :
 
 ```yaml
 yamlCopiar códigospring:
@@ -248,13 +247,13 @@ server:
 
 O código fonte dessa classe pode ser encontrado no seguinte repositório: [https://github.com/mateusbrandaot/TCC2\_Microservices/blob/main/agenday/gateway/src/main/resources/application.yaml](../../agenday/gateway/src/main/resources/application.yaml)
 
-**Explicação:**
+Explicação:
 
-* **`globalcors`**: Configura as permissões de CORS para permitir solicitações de origens específicas e métodos HTTP permitidos. Isso garante que o front-end, hospedado em uma origem diferente, possa se comunicar com o back-end sem problemas de bloqueio de origem cruzada.
-* **`routes`**: Define as rotas para os microsserviços. Cada serviço tem um ID, URI de destino, predicados de caminho (path) e filtros para adicionar cabeçalhos às requisições.
-  * **`user-management-service`**: Roteia todas as solicitações que começam com `/user-management/**` para o serviço de gerenciamento de usuários na porta 8081.
-  * **`registry-service`**: Roteia todas as solicitações que começam com `/registry/**` para o serviço de registro na porta 8082.
-* **`server.port`**: Define a porta na qual o API Gateway irá escutar (8080 por padrão).
+* `globalcors`: Configura as permissões de CORS para permitir solicitações de origens específicas e métodos HTTP permitidos. Isso garante que o front-end, hospedado em uma origem diferente, possa se comunicar com o back-end sem problemas de bloqueio de origem cruzada.
+* `routes`: Define as rotas para os microsserviços. Cada serviço tem um ID, URI de destino, predicados de caminho (path) e filtros para adicionar cabeçalhos às requisições.
+  * `user-management-service`: Roteia todas as solicitações que começam com `/user-management/**` para o serviço de gerenciamento de usuários na porta 8081.
+  * `registry-service`: Roteia todas as solicitações que começam com `/registry/**` para o serviço de registro na porta 8082.
+* `server.port`: Define a porta na qual o API Gateway irá escutar (8080 por padrão).
 
 Com essa configuração, todas as requisições do front-end passam pelo API Gateway, que se encarrega de roteá-las para os microsserviços apropriados. Isso simplifica a arquitetura da aplicação, pois o front-end precisa se comunicar apenas com um único ponto de entrada, tornando o gerenciamento e a manutenção mais eficientes.
 
@@ -266,7 +265,7 @@ Esta imagem mostra a requisição ao serviço de login, com o gateway redirecion
 
 Esta imagem mostra a requisição autenticada ao serviço de registro utilizando o token JWT obtido anteriormente, com o gateway redirecionando para o serviço `http://localhost:8082` e retornando a resposta.
 
-#### &#x20;Conclusão
+### &#x20;Conclusão
 
 A implementação do API Gateway demonstrou-se eficaz em centralizar e gerenciar as solicitações entre a interface do usuário e os microsserviços. A configuração adequada do gateway permitiu a roteamento eficiente das requisições, garantindo segurança através da autenticação e autorização baseada em tokens JWT.
 
