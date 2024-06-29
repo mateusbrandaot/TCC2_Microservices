@@ -64,11 +64,11 @@ A análise de resultados envolveu a avaliação desta PoC em diversos termos de 
 
 <figure><img src="../.gitbook/assets/Desempenho Operacional.png" alt=""><figcaption><p>Fonte : Autor</p></figcaption></figure>
 
-1. **Latência Média**:
+1. **Latência Média** (tempo que leva para uma requisição ser processada):
 
 * A latência média foi calculada como 48.45 ms.
 
-2. **Throughput**:
+2. **Throughput**( número de requisições bem-sucedidas):
 
 * O throughput foi calculado como 20.64 operações por segundo.
 
@@ -76,7 +76,7 @@ A análise de resultados envolveu a avaliação desta PoC em diversos termos de 
 
 <figure><img src="../.gitbook/assets/latency_distribution_chart.png" alt=""><figcaption><p>fonte : Autor</p></figcaption></figure>
 
-Este histograma mostra a frequência das latências observadas nas requisições. A latência é o tempo que leva para uma requisição ser processada e receber uma resposta. No gráfico abaixo, cada barra representa o número de requisições que tiveram uma latência dentro de um intervalo específico. Por exemplo, se uma barra está alta na posição "50 ms", isso significa que muitas requisições foram processadas em cerca de 50 milissegundos. Este gráfico ajuda a identificar se a maioria das requisições está sendo processada rapidamente ou se há um número significativo de requisições com latências mais altas.
+Este histograma mostra a frequência das latências observadas nas requisições. No gráfico acima, cada barra representa o número de requisições que tiveram uma latência dentro de um intervalo específico. Por exemplo, se uma barra está alta na posição "50 ms", isso significa que muitas requisições foram processadas em cerca de 50 milissegundos. Este gráfico ajuda a identificar se a maioria das requisições está sendo processada rapidamente ou se há um número significativo de requisições com latências mais altas.
 
 4. **Throughput ao Longo do Tempo**
 
@@ -86,13 +86,16 @@ Este gráfico de linha mostra o número de requisições bem-sucedidas ao longo 
 
 5. **Ocorrências de Falhas**
 
-<figure><img src="../.gitbook/assets/failure_occurrences_chart_fixed.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/failure_occurrences_chart_fixed.png" alt=""><figcaption><p>fonte : Autor</p></figcaption></figure>
 
 Este histograma mostra a distribuição das falhas ao longo do tempo. Ele indica em quais momentos ocorreram falhas nas requisições. Cada barra representa o número de falhas que ocorreram em um intervalo de tempo específico.
 
 6. **Uso de CPU e Memória**:
 
 * Os dados de uso de CPU e memória foram coletados utilizando o Grafana com o Prometheus. A métrica `process_cpu_usage{}` foi utilizada para medir a porcentagem de uso de CPU, e a métrica `jvm_memory_used_bytes{area="heap", id="G1 Old Gen"}` foi utilizada para medir a quantidade de memória usada pela geração "Old" do Garbage Collector G1. A "Old Generation" (ou "Geração Antiga") no contexto do Garbage Collector (GC) é onde os objetos de longa duração são armazenados. Monitorar essa área específica é crucial porque ela pode impactar significativamente o desempenho da aplicação, especialmente durante a execução do GC, quando a "Old Generation" é coletada. Se essa área estiver frequentemente cheia ou se estiver crescendo rapidamente, pode indicar problemas de retenção de memória ou a necessidade de tuning do GC.
+
+<figure><img src="../.gitbook/assets/Resultado Final Teste Carga.png" alt=""><figcaption><p>fonte : Autor</p></figcaption></figure>
+
 * **Uso de CPU**: O gráfico mostra que o uso de CPU varia, com um valor máximo de aproximadamente 0.06%.
 * **Uso de Memória**: O gráfico indica que o uso de memória na geração "Old" do Garbage Collector G1 varia entre 39 MB e 43 MB.
 
