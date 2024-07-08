@@ -88,7 +88,7 @@ Este gráfico de linha mostra o número de requisições bem-sucedidas ao longo 
 
 <figure><img src="../.gitbook/assets/failure_occurrences_chart_fixed.png" alt=""><figcaption><p>fonte : Autor</p></figcaption></figure>
 
-Este histograma mostra a distribuição das falhas ao longo do tempo. Ele indica em quais momentos ocorreram falhas nas requisições. Cada barra representa o número de falhas que ocorreram em um intervalo de tempo específico.
+Este histograma mostra a distribuição das falhas ao longo do tempo. Ele indica em quais momentos ocorreram falhas nas requisições. Cada barra representa o número de falhas que ocorreram em um intervalo de tempo específico. A maioria dessas falhas ocorreram devido a limitações ao gerenciar múltiplas conexões ao banco de dados MySQL em um ambiente Docker local. Essas limitações na rede interna do Docker resultaram em falhas nas conexões , onde a aplicação não conseguiu estabelecer novas conexões com o banco de dados MySQL devido à exaustão dos recursos de rede.
 
 6. **Uso de CPU e Memória**:
 
@@ -101,6 +101,12 @@ Este histograma mostra a distribuição das falhas ao longo do tempo. Ele indica
 
 ### Conclusão
 
-A partir dos dados analisados, observa-se que a latência média do microsserviço está razoavelmente baixa, indicando um bom tempo de resposta. O throughput é bom, mas pode ser melhorado. A presença de 304 falhas pode ser atribuída a fatores como as limitações do ambiente local com container, o que sugere que esses números podem ser mais favoráveis em um ambiente de produção otimizado. Como os dados foram coletados em um ambiente local rodando em um container, é provável que o desempenho em um ambiente de produção real seja diferente. Fatores como a configuração da infraestrutura, o balanceamento de carga e o tráfego de rede podem impactar significativamente os resultados. As limitações do ambiente local com container podem ter impactado tanto o throughput quanto o número de falhas observadas, sugerindo que esses números podem ser mais favoráveis em um ambiente de produção otimizado.
+A partir dos dados analisados, observa-se que a latência média do microsserviço está razoavelmente baixa, indicando um bom tempo de resposta. O throughput é bom, mas pode ser melhorado. A presença de 304 falhas pode ser atribuída a fatores como as limitações do ambiente local com contêineres, o que sugere que esses números podem ser mais favoráveis em um ambiente de produção otimizado.
+
+Grande parte dessas falhas ocorreu devido a limitações ao gerenciar múltiplas conexões ao banco de dados MySQL em um ambiente Docker local. Essas limitações na rede interna do Docker resultaram em falhas nas conexões, onde a aplicação não conseguiu estabelecer novas conexões com o banco de dados MySQL devido à exaustão dos recursos de rede.
+
+Como os dados foram coletados em um ambiente local rodando em contêineres, é provável que o desempenho em um ambiente de produção real seja diferente. Fatores como a configuração da infraestrutura, o balanceamento de carga e o tráfego de rede podem impactar significativamente os resultados. As limitações do ambiente local com contêineres podem ter impactado tanto o throughput quanto o número de falhas observadas, sugerindo que esses números podem ser mais favoráveis em um ambiente de produção otimizado.
+
+Além disso, grande parte do impacto ocasionado por essas conexões foi sanada na PoC 3 com a implementação do Circuit Breaker. Esta solução ajudou a melhorar a resiliência do sistema e a reduzir o número de falhas de conexão, proporcionando uma maior estabilidade e confiabilidade ao microsserviço.
 
 O código fonte do microsserviço pode ser encontrado no seguinte repositório: [GitHub - Agenday Registry Service](https://github.com/mateusbrandaot/TCC2\_Microservices/tree/main/agenday/registry).
