@@ -62,7 +62,13 @@ A análise de resultados envolveu a avaliação desta PoC em diversos termos de 
 
 ### Desempenho Operacional
 
-<figure><img src="../.gitbook/assets/Desempenho Operacional.png" alt=""><figcaption><p>Fonte : Autor</p></figcaption></figure>
+
+
+<figure><img src="../.gitbook/assets/Desempenho Operacional - Latência Média.png" alt=""><figcaption><p>fonte : Autor</p></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Desempenho Operacional - Throughput.png" alt=""><figcaption><p>fonte : Autor</p></figcaption></figure>
+
+
 
 1. **Latência Média** (tempo que leva para uma requisição ser processada):
 
